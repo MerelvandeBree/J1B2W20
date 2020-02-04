@@ -16,42 +16,43 @@
                 robotArm.moveRight();
             }
 
-            // robotArm.grab();
-
-        for(a = 0; a < 10; a++){
+            for(a = 0; a < 10; a++){
             color = robotArm.scan();
             
                 if(color == "white"){
-                    for(k = 0; k < 5; k++){
-                        robotArm.grab();
-                        for(m = 0; m < 5; m++){
-                            robotArm.moveLeft();
-                        }
-                        robotArm.drop();
-                        for(o = 0; o < 5; o++){
-                            robotArm.moveRight();
-                        }
-                    }  
+                   left();   
                 }
 
                 else {
-                    for(l = 0; l < 5; l++){
+                   right(); 
+                }    
+            }
 
-                        robotArm.grab();
-                        for(n = 0; n < 5; n++){
-                           robotArm.moveRight(); 
-                        }
-                        robotArm.drop();
-                        for(p = 0; p < 5; p++){
-                           robotArm.moveLeft(); 
-                        }
+            function left(white){
+                for(k = 0; k < 5; k++){
+                    robotArm.grab();
+                    for(m = 0; m < 5; m++){
+                        robotArm.moveLeft();
+                    }
+                    robotArm.drop();
+                    for(o = 0; o < 5; o++){
+                        robotArm.moveRight();
                     }
                 }
-            color = robotArm.scan();
+            }
 
-            
-        }
-                 
+            function right(other){
+                for(l = 0; l < 5; l++){
+                    robotArm.grab();
+                    for(n = 0; n < 5; n++){
+                       robotArm.moveRight(); 
+                    }
+                    robotArm.drop();
+                    for(p = 0; p < 5; p++){
+                       robotArm.moveLeft(); 
+                    }
+                }
+            }
 
             
 
